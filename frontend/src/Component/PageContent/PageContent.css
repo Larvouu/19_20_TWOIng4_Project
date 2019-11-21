@@ -3,7 +3,29 @@
     border-radius:1ex ;
 }
 
+
+
 #pageContent{
     padding-top : 2.5%;
     padding-left : 4%;
+}
+
+#widget2{
+    margin-left : 4%;
+}
+
+#widget3{
+    margin-left : 4%;
+}
+
+#widget4{
+    margin-left : 3%;
+}
+
+#widget5{
+    margin-left : 3%;
+}
+
+#widget6{
+    margin-left : 3%;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { userInfo } from 'os';
 import Man from '../../img/man.jpg';
+import Avatar from '../../img/monster.png';
 import Facebook from '../../img/facebook.png';
 import Insta from '../../img/instagram.png';
 import Snap from '../../img/snapchat.png';
@@ -12,19 +13,19 @@ class UserBox extends Component {
     render() {
         return (
             <div className="text-center">
-                <Row >
+                <Row style={{marginTop : "8%"}}>
                     <Col>
-                        <img src={Man} alt="img_user" />
+                        <img src={Avatar} alt="img_user" />
                     </Col>
                 </Row>
                 <br/>
                 <Row >
-                    <Col>
-                        <h2>{this.props.name}</h2>
+                    <Col id="name">
+                        {this.props.name}
                     </Col>
                 </Row>
                 <Row>
-                    <Col >
+                    <Col id="pseudo">
                         @{this.props.pseudo}
                     </Col>
                 </Row>
@@ -42,12 +43,12 @@ class UserBox extends Component {
                 </Row>
                 <br/>
                 <Row>
-                    <Col>
-                        <h1>{this.props.followers}</h1>
+                    <Col id="foll-value">
+                        {this.props.followers}
                     </Col>
                 </Row>
                 <Row>
-                    <Col id="text-foll">
+                    <Col id="foll-text">
                         Followers
                     </Col>
                 </Row>

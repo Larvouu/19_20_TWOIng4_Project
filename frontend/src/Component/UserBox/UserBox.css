@@ -1,3 +1,20 @@
-#text-foll{
+#foll-text{
+    font-family: 'Roboto', sans-serif;
     font-size : 0.65em;
 }
+
+#foll-value{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1em;
+}
+
+#name{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.1em;
+}
+
+#pseudo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+

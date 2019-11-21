@@ -14,7 +14,7 @@ const Tooltip_btn = (props) => {
         <Tooltip placement={tool_data_recu.tooltip_placement} isOpen={tooltipOpen} target={tool_data_recu.btn_id} toggle={toggle}>
           {tool_data_recu.tooltip_text}
     </Tooltip>*/}
-            <Button outline color="info" id="navbar_btn">
+            <Button outline color="secondary"  id="navbar_btn">
                 Gérer
             </Button>
             <Tooltip placement="bottom" isOpen={tooltipOpen} target="navbar_btn" toggle={toggle}>
