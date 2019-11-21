@@ -11,7 +11,7 @@ import '../UserBox/UserBox.css';
 class UserBox extends Component {
     render() {
         return (
-            <Container className="text-center">
+            <div className="text-center">
                 <Row >
                     <Col>
                         <img src={Man} alt="img_user" />
@@ -43,7 +43,7 @@ class UserBox extends Component {
                 <br/>
                 <Row>
                     <Col>
-                        <h2>{this.props.followers}</h2>
+                        <h1>{this.props.followers}</h1>
                     </Col>
                 </Row>
                 <Row>
@@ -58,7 +58,7 @@ class UserBox extends Component {
                     </Col>
                 </Row>
                 <br/>
-            </Container>
+            </div>
         );
     }
 }

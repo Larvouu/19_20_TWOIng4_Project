@@ -1,8 +1,9 @@
-#userbox{
-    background-color: #ffffff;
-    border-radius:1%;
+.box{
+    background-color: #ffffffb9;
+    border-radius:1ex ;
 }
 
 #pageContent{
-    padding-top : 3.5%;
+    padding-top : 2.5%;
+    padding-left : 4%;
 }
