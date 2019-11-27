@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
+
 const data = [
   {
     name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
@@ -26,32 +27,23 @@ const data = [
   },
 ];
 
-
-
-export default class LineChart_Tiny extends PureComponent {
-  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/xqjtetw0/';
+export default class AreaChart_Tiny extends PureComponent {
+  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/tv8zfzxo/';
 
   render() {
     return (
-      <div>
-        <div className="text-left">Salut</div><br/>
-      <LineChart
+        <div>
+            <div className="text-left">Hakunamatata</div><br/>
+      <AreaChart
         width={140}
         height={100}
         data={data}
         margin={{
-          top: 0, right: 0, left: 0, bottom: 5,
+          top: 5, right: 0, left: 0, bottom: 5,
         }}
       >
-        {/*<CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        
-      <Legend />*/}
-        <Tooltip />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-      </LineChart>
+        <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+      </AreaChart>
       </div>
     );
   }

@@ -7,6 +7,11 @@ import StatGlobale from '../StatGlobale/StatGlobale';
 import Headphones from '../../img/headphones.png';
 import Jukebox from '../../img/jukebox.png'
 import './PageContent.css';
+import ProgressBar from '../Widgets/ProgressBar/ProgressBar';
+import AreaChart_Tiny from '../Widgets/AreaChart_Tiny/AreaChart_Tiny';
+import BarChart_Tiny from '../Widgets/BarChart_Tiny/BarChart_Tiny';
+import HalfPieChart from '../Widgets/HalfPieChart/HalfPieChart';
+import PieChart_Stylax from '../Widgets/PieChart_Stylax/PieChart_Stylax';
 
 class PageContent extends Component {
 
@@ -37,28 +42,28 @@ class PageContent extends Component {
                             </Col>
 
                             {/* LE LINE CHART*/}
-                            <Col sm={{ size: 2, offset: 0 }} className="box" id="widget4">
-                                {/*<LineChart_Tiny/>*/}
+                            <Col sm={{ size: 2, offset: 0 }} className="box" id="widget4" >
+                                <LineChart_Tiny/>
                             </Col>
                             {/* LE LINE CHART 2 OU PROGRESS BAR*/}
                             <Col sm={{ size: 2, offset: 0 }} className="box" id="widget5">
-                                Hello
+                                <AreaChart_Tiny/>
                             </Col>
 
                             <Col sm={{ size: 2, offset: 0 }} className="box" id="widget6">
-                                Hello
+                                <ProgressBar/>
                             </Col>
                         </Row>
                         {<br />} {<br />}
                         <Row>
                             <Col sm={{ size: 3, offset: 1 }} className="box">
-                                salut
+                                <BarChart_Tiny/>
                             </Col>
                             <Col sm={{ size: 3, offset: 0 }} className="box" id="widget2">
-                                salut
+                                <HalfPieChart/>
                             </Col>
                             <Col sm={{ size: 3, offset: 0 }} className="box" id="widget3">
-                                salut
+                                <PieChart_Stylax/>
                             </Col>
                         </Row>
                     </Col>
