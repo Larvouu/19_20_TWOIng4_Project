@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
+import '../AreaChart_Tiny/AreaChart_Tiny.css';
 
 const data = [
   {
@@ -33,16 +34,16 @@ export default class AreaChart_Tiny extends PureComponent {
   render() {
     return (
         <div>
-            <div className="text-left">Hakunamatata</div><br/>
+            <div id="text" style={{ fontSize: "0.8em" }}>Hakunamatata</div><br/>
       <AreaChart
-        width={140}
+        width={130}
         height={100}
         data={data}
         margin={{
           top: 5, right: 0, left: 0, bottom: 5,
         }}
       >
-        <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+        <Area type="monotone" dataKey="uv" stroke="#1e272e" fill="#60a3bc" />
       </AreaChart>
       </div>
     );

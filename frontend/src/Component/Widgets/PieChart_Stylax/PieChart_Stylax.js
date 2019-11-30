@@ -18,20 +18,20 @@ export default class PieChart_Stylax extends PureComponent {
     render() {
         return (
             <div>
-                <div className="text-left">Salut</div><br />
+                <div id="text" style={{ fontSize: "0.8em" }}>Salut</div><br />
                 <PieChart width={200} height={200} onMouseEnter={this.onPieEnter}>
                     <Pie
                         data={data}
-                        cx={90}
+                        cx={100}
                         cy={50}
                         innerRadius={40}
                         outerRadius={55}
-                        fill="#8884d8"
+                        fill="#1e272e"
                         paddingAngle={5}
                         dataKey="value"
                     >
                         {
-                            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                            data.map((entry, index) => <Cell key={`cell-${index}`} fill="#60a3bc" />)
                         }
                     </Pie>
                 </PieChart>

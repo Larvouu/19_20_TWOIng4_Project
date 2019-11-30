@@ -11,14 +11,15 @@ import '../UserBox/UserBox.css';
 
 class UserBox extends Component {
     render() {
+
         return (
             <div className="text-center">
-                <Row style={{marginTop : "8%"}}>
+                <Row style={{ marginTop: "8%" }}>
                     <Col>
                         <img src={Avatar} alt="img_user" />
                     </Col>
                 </Row>
-                <br/>
+                <br />
                 <Row >
                     <Col id="name">
                         {this.props.name}
@@ -29,19 +30,19 @@ class UserBox extends Component {
                         @{this.props.pseudo}
                     </Col>
                 </Row>
-                <br/>
+                <br />
                 <Row>
                     <Col >
-                        <a href="https://www.instagram.com/vntaxel/?hl=fr"><img src={Insta} alt="insta_logo"/></a>
+                        <a href="https://www.instagram.com/vntaxel/?hl=fr"><img src={Insta} alt="insta_logo" /></a>
                     </Col>
                     <Col >
-                        <a href="https://www.facebook.com/axel.vinant"><img src={Facebook} alt="fb_logo"/></a>
+                        <a href="https://www.facebook.com/axel.vinant"><img src={Facebook} alt="fb_logo" /></a>
                     </Col>
                     <Col >
-                        <img src={Snap} alt="snap_logo" />
+                        <img src={Snap} alt="snap_logo" id="snapchat_img"/>
                     </Col>
                 </Row>
-                <br/>
+                <br />
                 <Row>
                     <Col id="foll-value">
                         {this.props.followers}
@@ -52,13 +53,13 @@ class UserBox extends Component {
                         Followers
                     </Col>
                 </Row>
-                <br/>
+                <br />
                 <Row>
                     <Col>
                         <Tooltip_btn />
                     </Col>
                 </Row>
-                <br/>
+                <br />
             </div>
         );
     }

@@ -1,8 +1,9 @@
 
 .App {
-  background: linear-gradient(-20deg, #1b1e22cb, #1b1e22cb, #252b2b, #252b2b);
-  width:100vw;
-  height:46vw;
+  /*background: linear-gradient(-20deg, #1b1e22cb, #1b1e22cb, #252b2b, #252b2b);
+  background: linear-gradient(-20deg, #6ab04c, #6ab04c, #badc58, #badc58);*/
+  background: linear-gradient(-20deg, #3c6382, #3c6382, #60a3bc, #60a3bc);
+  padding-bottom: 5%;
 }
 
 #firstRow{

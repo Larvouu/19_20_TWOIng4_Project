@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
+import '../BarChart_Tiny/BarChart_Tiny.css';
 
 const data = [
     {
@@ -33,9 +34,9 @@ export default class BarChart_Tiny extends PureComponent {
     render() {
         return (
             <div>
-                <div className="text-left">Salut</div><br />
+                <div id="text" style={{ fontSize: "0.8em" }}>Salut</div><br />
                 <BarChart width={160} height={150} data={data}>
-                    <Bar dataKey="uv" fill="#8884d8" />
+                    <Bar dataKey="uv" fill="#60a3bc" />
                 </BarChart>
             </div>
         );

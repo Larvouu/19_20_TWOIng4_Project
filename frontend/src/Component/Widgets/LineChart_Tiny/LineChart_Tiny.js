@@ -34,24 +34,23 @@ export default class LineChart_Tiny extends PureComponent {
   render() {
     return (
       <div>
-        <div className="text-left">Salut</div><br/>
-      <LineChart
-        width={140}
-        height={100}
-        data={data}
-        margin={{
-          top: 0, right: 0, left: 0, bottom: 5,
-        }}
-      >
-        {/*<CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        
-      <Legend />*/}
-        <Tooltip />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-      </LineChart>
+        <div id="text" style={{ fontSize: "0.8em" }}>Salut</div><br />
+        <LineChart
+          width={130}
+          height={100}
+          data={data}
+          margin={{
+            top: 0, right: 0, left: 0, bottom: 5,
+          }}
+        >
+          {/*<CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Legend />*/}
+          <Tooltip />
+          <Line type="monotone" dataKey="pv" stroke="#1e272e" />
+          <Line type="monotone" dataKey="uv" stroke="#1e272e" />
+        </LineChart>
       </div>
     );
   }

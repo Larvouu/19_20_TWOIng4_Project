@@ -15,9 +15,9 @@ export default class HalfPieChart extends PureComponent {
     render() {
         return (
             <div>
-                <div className="text-left">Salut</div><br />
+                <div id="text" style={{ fontSize: "0.8em" }}>Salut</div><br />
                 <PieChart width={200} height={200}>
-                    <Pie dataKey="value" startAngle={180} endAngle={0} data={data} cx={90} cy={100} outerRadius={55} fill="#8884d8" label />
+                    <Pie dataKey="value" startAngle={180} endAngle={0} data={data} cx={90} cy={100} outerRadius={55} fill="#60a3bc" label />
                 </PieChart>
             </div>
         );
