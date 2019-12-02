@@ -27,7 +27,7 @@ class PageContent extends Component {
                         <UserBox name="Axel Vinant" pseudo="vntaxel" followers={1101} />
                     </Col>*/}
                     {/* TOUT LE RESTE : COL*/}
-                    <Col sm={{ size: 12, offset: 0 }}>
+                    <Col sm={{ size: 12, offset: 0 }}> {/** coucou test */}
                         <Row>
                             {/* LES DEUX StatGlobale*/}
                             <Col sm={{ size: 3, offset: 1 }}>
