@@ -5,20 +5,20 @@ import PageContent from './Component/PageContent/PageContent';
 import './App.css';
 // #DFFDFD mentholé
 import Routes from './routes';
-import {Link} from 'react-router-dom';
+import NavBar from './Component/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <header>
+      {/*<header>
         <nav>
           <ol>
             <li><Link to="/">Home</Link> </li>
             <li><Link to="/admin">admin</Link></li>
           </ol>
         </nav>
-      {/*<PageContent/>*/}
-      </header>
+      </header>*/}
+      <NavBar/>
       <Routes/>
     </div>
   );

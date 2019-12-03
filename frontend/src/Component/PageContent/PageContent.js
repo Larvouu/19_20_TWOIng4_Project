@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import LineChart_Tiny from '../Widgets/LineChart_Tiny/LineChart_Tiny'
-import UserBox from '../UserBox/UserBox';
 import StatGlobale from '../StatGlobale/StatGlobale';
 import Headphones from '../../img/headphones.png';
 import Jukebox from '../../img/jukebox.png'
@@ -22,11 +21,6 @@ class PageContent extends Component {
             <div id="pageContent">
                 {/* TOUT EST SUR LA MEME LIGNE ROW*/}
                 <Row >
-                    {/* USERBOX
-                    <Col className="box" sm={{ size: 3, offset: 0 }}>
-                        <UserBox name="Axel Vinant" pseudo="vntaxel" followers={1101} />
-                    </Col>*/}
-                    {/* TOUT LE RESTE : COL*/}
                     <Col sm={{ size: 12, offset: 0 }}> {/** coucou test */}
                         <Row>
                             {/* LES DEUX StatGlobale*/}

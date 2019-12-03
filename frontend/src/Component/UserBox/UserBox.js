@@ -56,7 +56,7 @@ class UserBox extends Component {
                 <br />
                 <Row>
                     <Col>
-                        <Tooltip_btn />
+                        {/*<Tooltip_btn />*/} {/** Enlevé suite au déplacement de la userBox dans la page admin */}
                     </Col>
                 </Row>
                 <br />
