@@ -1,4 +1,5 @@
 # Projet de fin de semestre
+# Antoine Ghiassi - Axel Vinant - OCRES TD04
 
 A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
 
