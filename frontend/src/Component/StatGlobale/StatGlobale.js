@@ -5,11 +5,11 @@ import '../StatGlobale/StatGlobale.css';
 class StatGlobale extends Component {
     render() {
         return (
-            <Row>
-                <Col sm={{ size: 5 }}>
+            <Row className="text-center">
+                <Col sm={{ size: 6 }}>
                     <img src={this.props.img} alt="img music" />
                 </Col>
-                <Col sm={{ size: 7 }} className="text-center">
+                <Col sm={{ size: 6 }} >
                     <Row id="title" style={{ fontSize: "0.8em" }} >
                         <Col>{this.props.name}</Col>
                     </Row>

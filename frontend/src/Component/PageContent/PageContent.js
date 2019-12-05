@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import LineChart_Tiny from '../Widgets/LineChart_Tiny/LineChart_Tiny'
+import LineChart_Tiny from '../Widgets/LineChart_Tiny/LineChart_Tiny';
 import StatGlobale from '../StatGlobale/StatGlobale';
+// images
 import Headphones from '../../img/headphones.png';
-import Jukebox from '../../img/jukebox.png'
+import Jukebox from '../../img/jukebox.png';
+import Uni from '../../img/uni.png';
+//
 import './PageContent.css';
 import ProgressBar from '../Widgets/ProgressBar/ProgressBar';
 import AreaChart_Tiny from '../Widgets/AreaChart_Tiny/AreaChart_Tiny';
@@ -26,11 +29,11 @@ class PageContent extends Component {
                             {/* LES DEUX StatGlobale*/}
                             <Col sm={{ size: 3, offset: 1 }}>
                                 <Row className="box">
-                                    <StatGlobale img={Headphones} name="Ecoutes" value="5 642" />
+                                    <StatGlobale img={Uni} name="Ecoutes" value="5 642" />
                                 </Row>
                                 {<br />}
                                 <Row className="box">
-                                    <StatGlobale img={Jukebox} name="Musiques" value="352" />
+                                    <StatGlobale img={Uni} name="Musiques" value="352" />
                                 </Row>
                             </Col>
 
@@ -60,8 +63,6 @@ class PageContent extends Component {
                             </Col>
                         </Row>
                     </Col>
-
-
                 </Row>
             </div>
         );
