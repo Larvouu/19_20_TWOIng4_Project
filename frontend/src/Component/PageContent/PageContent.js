@@ -22,9 +22,9 @@ class PageContent extends Component {
     render() {
         return (
             <div id="pageContent">
-                {/* TOUT EST SUR LA MEME LIGNE ROW*/}
+                {/* TOUT EST SUR LA MEME LIGNE ROW */}
                 <Row >
-                    <Col sm={{ size: 12, offset: 0 }}> {/** coucou test */}
+                    <Col sm={{ size: 12, offset: 0 }}> 
                         <Row>
                             {/* LES DEUX StatGlobale*/}
                             <Col sm={{ size: 3, offset: 1 }}>
