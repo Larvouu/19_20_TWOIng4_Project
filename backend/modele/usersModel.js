@@ -5,4 +5,6 @@ const userSchema = new mongoose.Schema({
     personsInHouse:Number,
     houseSize:String
 
-})
+});
+
+module.exports = mongoose.model('User', userSchema);

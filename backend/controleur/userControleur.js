@@ -1,7 +1,5 @@
 const User = require('../modele/usersModel.js');
 
-
-//Ce .js a été fourni et expliqué par le groupe de Sarah Le OCRES TD02.
 //créer + sauvegarder un utilisateur
 exports.create = (req,res) => {
 
