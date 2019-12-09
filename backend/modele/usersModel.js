@@ -6,5 +6,5 @@ const userSchema = new mongoose.Schema({
     houseSize:String
 
 });
-//test
+
 module.exports = mongoose.model('User', userSchema);

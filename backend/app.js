@@ -21,6 +21,9 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var sensorsRouter = require("./routes/sensors");
 var measuresRouter = require("./routes/measures");
+var userRouter = require("./routes/user");
+var sensorRouter = require("./routes/sensor");
+var measureRouter = require("./routes/measure");
 
 var app = express();
 
@@ -33,5 +36,8 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/sensors", sensorsRouter);
 app.use("/measures", measuresRouter);
+app.use("/user", userRouter);
+app.use("/sensor", sensorRouter);
+app.use("/measure", measureRouter);
 
 module.exports = app;
