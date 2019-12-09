@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const sensorSchema = new mongoose.Schema({
     creationDate:Date,
     location:String,
     userId:{
@@ -8,6 +8,9 @@ const userSchema = new mongoose.Schema({
         ref: 'User'
     }
 
+},
+{
+  timestamps: true
 });
 
 module.exports = mongoose.model('Sensor', sensorSchema);

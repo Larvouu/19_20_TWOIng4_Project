@@ -5,9 +5,17 @@ const dbName = "DashboardProject";
 const dbURL = `mongodb://localhost:27017/${dbName}`;
 
 //Connection à la db
-mongoose.connect(dbURL, {
-    useNewUrlParser:true
-});
+mongoose.connect(dbURL, { 
+    useUnifiedTopology: true, //suite au warning suivant : (node:14328) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    useNewUrlParser:true,
+    useCreateIndex: true
+}).then(() => {
+    console.log('Database connected sucessfully !')
+},
+    error => {
+        console.log('Database could not be connected : ' + error)
+    }
+);
 
 
 var express = require("express");
@@ -17,7 +25,7 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 
-//variables pour accéder aux fichiers
+//variables pour accéder aux fichiers : ajout
 var usersRouter = require("./routes/users");
 var sensorsRouter = require("./routes/sensors");
 var measuresRouter = require("./routes/measures");

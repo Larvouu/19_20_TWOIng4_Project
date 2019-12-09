@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const measureSchema = new mongoose.Schema({
+    
     type:String,
     value:Number,
     creationDate:Date,
@@ -9,6 +10,9 @@ const userSchema = new mongoose.Schema({
         ref: 'Sensor'
     }
 
+},
+{
+  timestamps: true
 });
 
 module.exports = mongoose.model('Measure', measureSchema);

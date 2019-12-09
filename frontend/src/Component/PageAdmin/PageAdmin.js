@@ -8,10 +8,10 @@ class PageAdmin extends Component {
         return (
             <div>
                 <Row style={{marginTop:"3%"}}>
-                    <Col className="box" sm={{ size: 3, offset: 1 }}>
+                    <Col className="box" xs={{ size: 10, offset: 1 }} sm={{ size: 6, offset: 3 }} lg={{ size: 3, offset: 1 }} style={{marginBottom:"5%"}}>
                         <UserBox name="Axel Vinant" pseudo="vntaxel" followers={1121} />
                     </Col>
-                    <Col className="box" sm={{ size: 6, offset: 1 }}>
+                    <Col className="box" xs={{ size: 10, offset: 1 }} sm={{ size: 6, offset: 3 }} lg={{ size: 6, offset: 1 }}>
                         <AdminForm />
                     </Col>
                 </Row>

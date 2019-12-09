@@ -65,8 +65,9 @@ exports.update = (req,res) => {
     User.findByIdAndUpdate(
         req.params.userId,
         {
-            title: req.body.location,
-            content: res.body.personsInHouse,
+            location: req.body.location,
+            personsInHouse: req.body.personsInHouse,
+            houseSize: req.body.houseSize
         },
         {new: true}
     )
