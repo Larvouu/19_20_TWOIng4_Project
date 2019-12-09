@@ -23,45 +23,41 @@ class PageContent extends Component {
         return (
             <div id="pageContent">
                 {/* TOUT EST SUR LA MEME LIGNE ROW */}
-                <Row >
-                    <Col sm={{ size: 12, offset: 0 }}> 
-                        <Row>
-                            {/* LES DEUX StatGlobale*/}
-                            <Col sm={{ size: 3, offset: 1 }}>
-                                <Row className="box">
-                                    <StatGlobale img={Uni} name="Ecoutes" value="5 642" />
-                                </Row>
-                                {<br />}
-                                <Row className="box">
-                                    <StatGlobale img={Uni} name="Musiques" value="352" />
-                                </Row>
-                            </Col>
-
-                            {/* LE LINE CHART*/}
-                            <Col sm={{ size: 2, offset: 0 }} className="box" id="widget4" >
-                                <LineChart_Tiny/>
-                            </Col>
-                            {/* LE LINE CHART 2 OU PROGRESS BAR*/}
-                            <Col sm={{ size: 2, offset: 0 }} className="box" id="widget5">
-                                <AreaChart_Tiny/>
-                            </Col>
-
-                            <Col sm={{ size: 2, offset: 0 }} className="box" id="widget6">
-                                <ProgressBar/>
-                            </Col>
+                <Row>
+                    {/* LES DEUX StatGlobale*/}
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 1 }} style={{marginBottom:"2%"}}>
+                        <Row className="box">
+                            <StatGlobale img={Uni} name="Ecoutes" value="5 642" />
                         </Row>
-                        {<br />} {<br />}
-                        <Row>
-                            <Col sm={{ size: 3, offset: 1 }} className="box">
-                                <BarChart_Tiny/>
-                            </Col>
-                            <Col sm={{ size: 3, offset: 0 }} className="box" id="widget2">
-                                <HalfPieChart/>
-                            </Col>
-                            <Col sm={{ size: 3, offset: 0 }} className="box" id="widget3">
-                                <PieChart_Stylax/>
-                            </Col>
+                        {<br />}
+                        <Row className="box">
+                            <StatGlobale img={Uni} name="Musiques" value="352" />
                         </Row>
+                    </Col>
+
+                    {/* LE LINE CHART*/}
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget4" >
+                        <LineChart_Tiny />
+                    </Col>
+                    {/* LE LINE CHART 2 OU PROGRESS BAR*/}
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget5">
+                        <AreaChart_Tiny />
+                    </Col>
+
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget6">
+                        <ProgressBar />
+                    </Col>
+                </Row>
+                {<br />} {<br />}
+                <Row>
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 1 }} style={{marginBottom:"2%"}} className="box">
+                        <BarChart_Tiny />
+                    </Col>
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget2">
+                        <HalfPieChart />
+                    </Col>
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget3">
+                        <PieChart_Stylax />
                     </Col>
                 </Row>
             </div>
