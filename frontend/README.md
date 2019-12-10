@@ -13,3 +13,5 @@ Le mockup :
 
 Le wireframe :
 - Etant donné que nous ne navigons qu'entre deux pages, exclusivement via la navbar, il ne nous a pas semblé nécessaire d'élaborer un wireframe
+
+Pas de storybook
