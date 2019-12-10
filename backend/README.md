@@ -30,6 +30,7 @@ Remarque : des illustrations se trouvent dans frontend/src/illustrations_front.
 
 # Notes 
 - Dans le widget barChart, même après avoir suivi les instructions ci dessus, la barre représentant 'cuisine' est à 0. Ce n'est pas une erreur, il n'y a effectivement aucun capteur dans la database ayant pour location 'kitchen'.
+- lors de l'ajout d'un nouvel utilisateur via la page admin, la page ne s'actualise pas d'elle même, il faut changer de page puis y retourner pour voir le nouvel user apparaitre dans le tableau.
 - Pour ce qui est des bonus du back, comme nous possédons les CRUD pour user, sensor, et measure, il nous est possible de delete un user, ainsi que d'update un user, même si les fonctionnalités ne sont pas exerçables via le frontend. Elles sont vérifiables sur Postman avec les requettes suivantes : 
 
 # les requetes Postman pour tester la remarque juste au dessus
