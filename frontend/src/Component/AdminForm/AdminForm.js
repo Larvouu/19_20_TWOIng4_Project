@@ -48,10 +48,12 @@ class AdminForm extends Component {
         });
 
     this.setState({ location: '', personsInHouse: '', houseSize: '' })
-    /*alert('pays : ' + this.state.location 
+
+    //On alerte pour dire que ça a bien été fait pour le moment
+    alert('le user suivant a bien été ajouté : \n' + 'pays : ' + this.state.location 
         + '\nnombre : '+ this.state.personsInHouse
         + '\ntaille : '+ this.state.houseSize);
-        e.preventDefault();*/
+        e.preventDefault();
 }
 
 
