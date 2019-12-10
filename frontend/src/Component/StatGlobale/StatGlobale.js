@@ -3,6 +3,8 @@ import { Container, Row, Col } from 'reactstrap';
 import '../StatGlobale/StatGlobale.css';
 
 class StatGlobale extends Component {
+
+
     render() {
         return (
             <Row className="text-center">

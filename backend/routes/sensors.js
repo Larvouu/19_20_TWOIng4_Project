@@ -5,4 +5,5 @@ var sensor = require('../controleur/sensorControleur');
 /* GET sensors listing. */
 router.get('/', sensor.findAll);
 
+
 module.exports = router;
