@@ -22,6 +22,7 @@ class PageContent extends Component {
             //Pour StatGlobale
             nb_sensors: 0,
             nb_users: 0,
+            nb_measures:0,
             //Pour le halfPieChart
             nb_measures_himidity: 0,
             nb_measures_temperature: 0,
@@ -42,6 +43,10 @@ class PageContent extends Component {
             //Pour la progressBar
             nb_temp_sup_ou_eg_vingt: 0,
             pb_title: 'Taux de températures supérieures ou égale à 30 degrés',
+            //Pour le areaChart_Tiny
+            ac_title: 'Courbe d\'augmentation du nombre d\' utilisateurs depuis la création du site',
+            //Pour le lineChart
+            lc_title : 'Nombres d\'utilisateurs, de capteurs puis de mesures'
         };
     }
 
@@ -58,6 +63,14 @@ class PageContent extends Component {
         axios.get('http://localhost:3000/users')
             .then(res => {
                 this.setState({ nb_users: res.data.length });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        //retourne le nombre de measures
+        axios.get('http://localhost:3000/measures')
+            .then(res => {
+                this.setState({ nb_measures: res.data.length });
             })
             .catch(function (error) {
                 console.log(error);
@@ -170,11 +183,19 @@ class PageContent extends Component {
 
                     {/* LE LINE CHART*/}
                     <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{ marginBottom: "2%" }} className="box" id="widget4" >
-                        <LineChart_Tiny />
+                        <LineChart_Tiny 
+                            nb_user_tot_lc={this.state.nb_users}
+                            nb_sensor_tot_lc={this.state.nb_sensors}
+                            nb_measure_tot_lc={this.state.nb_measures}
+                            lineChart_title={this.state.lc_title}
+                        />
                     </Col>
                     {/* LE LINE CHART 2 OU PROGRESS BAR*/}
                     <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{ marginBottom: "2%" }} className="box" id="widget5">
-                        <AreaChart_Tiny />
+                        <AreaChart_Tiny
+                            nb_mes_tot={this.state.nb_measures}
+                            areaChart_title={this.state.ac_title}
+                        />
                     </Col>
 
                     <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{ marginBottom: "2%" }} className="box" id="widget6">

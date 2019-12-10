@@ -51,4 +51,6 @@ app.use("/measure", measureRouter);
 
 app.use(cors());
 
+app.disable('etag');
+
 module.exports = app;

@@ -24,7 +24,8 @@ Ainsi, pour que les données du dashboard proviennent bien de la bdd, il faut, d
 - aller dans le menu déroulant de la navbar, sélectionner la page admin pour y accéder
 - aller dans le menu déroulant de la navbar, sélectionner la page accueil pour y ré-accéder
 
-Ainsi les données seront bien mises à jour, et on peut commencer l'observation du dashboard
+Ainsi les données seront bien mises à jour, et on peut commencer l'observation du dashboard.
+Remarque : des illustrations se trouvent dans frontend/src/illustrations_front.
 
 
 # Notes 
