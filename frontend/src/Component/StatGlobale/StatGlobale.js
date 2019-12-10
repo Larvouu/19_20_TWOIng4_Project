@@ -6,10 +6,10 @@ class StatGlobale extends Component {
     render() {
         return (
             <Row className="text-center">
-                <Col sm={{ size: 5, offset: 1 }} lg={{ size: 6 }}>
+                <Col xs={{ size: 4, offset: 1 }} lg={{ size: 4 }}>
                     <img src={this.props.img} alt="img music" />
                 </Col>
-                <Col sm={{ size: 5, offset: 1 }} lg={{ size: 6 }} >
+                <Col xs={{ size: 6, offset: 1 }} lg={{ size: 6 }} >
                     <Row id="title" style={{ fontSize: "0.8em" }} >
                         <Col>{this.props.name}</Col>
                     </Row>
