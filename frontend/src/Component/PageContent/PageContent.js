@@ -18,10 +18,15 @@ class PageContent extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             //Pour StatGlobale
-            nb_sensors : 0,
-            nb_users : 0
+            nb_sensors: 0,
+            nb_users: 0,
+            //Pour le halfPieChart
+            nb_measures_himidity: 0,
+            nb_measures_temperature: 0,
+            nb_measures_airPollution: 0,
+            hpc_title: 'Répartition des types de mesures sur 1000 capteurs : Température, humidité, puis pollution de l\'air'
         };
     }
 
@@ -42,6 +47,28 @@ class PageContent extends Component {
             .catch(function (error) {
                 console.log(error);
             })
+        //retourne le nombre de measures de type humidity - temperature - airPollution
+        axios.get('http://localhost:3000/measures/humidity')
+            .then(res => {
+                this.setState({ nb_measures_himidity: res.data.length });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        axios.get('http://localhost:3000/measures/temperature')
+            .then(res => {
+                this.setState({ nb_measures_temperature: res.data.length });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        axios.get('http://localhost:3000/measures/airPollution')
+            .then(res => {
+                this.setState({ nb_measures_airPollution: res.data.length });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     }
 
     render() {
@@ -50,7 +77,7 @@ class PageContent extends Component {
                 {/* TOUT EST SUR LA MEME LIGNE ROW */}
                 <Row>
                     {/* LES DEUX StatGlobale*/}
-                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 1 }} style={{marginBottom:"2%"}}>
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 1 }} style={{ marginBottom: "2%" }}>
                         <Row className="box">
                             <StatGlobale img={Uni} name="Utilisateurs" value={this.state.nb_users} />
                         </Row>
@@ -61,27 +88,32 @@ class PageContent extends Component {
                     </Col>
 
                     {/* LE LINE CHART*/}
-                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget4" >
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{ marginBottom: "2%" }} className="box" id="widget4" >
                         <LineChart_Tiny />
                     </Col>
                     {/* LE LINE CHART 2 OU PROGRESS BAR*/}
-                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget5">
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{ marginBottom: "2%" }} className="box" id="widget5">
                         <AreaChart_Tiny />
                     </Col>
 
-                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget6">
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 2, offset: 0 }} style={{ marginBottom: "2%" }} className="box" id="widget6">
                         <ProgressBar />
                     </Col>
                 </Row>
                 {<br />} {<br />}
                 <Row>
-                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 1 }} style={{marginBottom:"2%"}} className="box">
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 1 }} style={{ marginBottom: "2%" }} className="box">
                         <BarChart_Tiny />
                     </Col>
-                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget2">
-                        <HalfPieChart />
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 0 }} style={{ marginBottom: "2%" }} className="box" id="widget2">
+                        <HalfPieChart
+                            mes_humidity={this.state.nb_measures_himidity}
+                            mes_temperature={this.state.nb_measures_temperature}
+                            mes_airPollution={this.state.nb_measures_airPollution}
+                            halfPieChart_title={this.state.hpc_title}
+                        />
                     </Col>
-                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 0 }} style={{marginBottom:"2%"}} className="box" id="widget3">
+                    <Col xs={{ size: 10, offset: 1 }} sm={{ size: 5, offset: 1 }} lg={{ size: 3, offset: 0 }} style={{ marginBottom: "2%" }} className="box" id="widget3">
                         <PieChart_Stylax />
                     </Col>
                 </Row>

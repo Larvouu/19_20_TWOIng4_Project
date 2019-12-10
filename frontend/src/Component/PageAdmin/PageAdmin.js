@@ -8,8 +8,8 @@ class PageAdmin extends Component {
     render() {
         return (
             <Row style={{ marginTop: "3%" }}>
-                <Col className="box" xs={{ size: 10, offset: 1 }}  lg={{ size: 5, offset: 1 }} style={{marginBottom:"5%"}}>
-                    {/*<UserBox name="Axel Vinant" pseudo="vntaxel" followers={1121} />*/}
+                <Col className="box" xs={{ size: 12}}  xl={{ size: 5, offset: 1 }} style={{marginBottom:"5%"}}>
+                    {/*<UserBox name="Axel Vinant" pseudo="vntaxel" followers={1121} /> // Au final la userbox d'un seul user est tro H.S. pour être utilisée*/}
                     <UsersTab style={{  marginTop:"5%" }}/>
                 </Col>
                 <Col className="box" xs={{ size: 10, offset: 1 }} sm={{ size: 6, offset: 3 }} lg={{ size: 3, offset: 1 }}>

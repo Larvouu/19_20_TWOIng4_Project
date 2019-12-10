@@ -35,6 +35,7 @@ exports.findAll = (req, res) => {
         });
 }
 
+
 //trouver un sensor avec son id
 exports.findOne = (req, res) => {
     Sensor.findById(req.params.sensorId)

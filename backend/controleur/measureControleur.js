@@ -36,6 +36,46 @@ exports.findAll = (req, res) => {
         });
 }
 
+//Les trois fonctions pour return le type de mesure
+exports.getTypeHumidity = (req, res) => {
+
+    Measure.find({ type: 'humidity' })
+        .then(measures => {
+            res.send(measures);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || 'erreur au moment de trouver les measures'
+            });
+        });
+}
+
+exports.getTypeTemperature = (req, res) => {
+
+    Measure.find({ type: 'temperature' })
+        .then(measures => {
+            res.send(measures);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || 'erreur au moment de trouver les measures'
+            });
+        });
+}
+
+exports.getTypeAirPollution = (req, res) => {
+
+    Measure.find({ type: 'airPollution' })
+        .then(measures => {
+            res.send(measures);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || 'erreur au moment de trouver les measures'
+            });
+        });
+}
+
 //trouver un measure avec son id
 exports.findOne = (req, res) => {
     Measure.findById(req.params.measureId)

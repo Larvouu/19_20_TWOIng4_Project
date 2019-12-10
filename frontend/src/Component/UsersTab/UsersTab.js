@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'reactstrap';
 import axios from 'axios';
 import DataTable from './data-table';
 
@@ -27,22 +28,20 @@ export default class UsersTab extends Component {
 
     render() {
         return (
-            <div className="wrapper-users">
-                <div className="container">
-                    <table className="table table-striped table-striped">
-                        <thead className="thead-dark">
-                            <tr>
-                                <td>ID</td>
-                                <td>Localisation</td>
-                                <td>Persons in house</td>
-                                <td>House size</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.dataTable()}
-                        </tbody>
-                    </table>
-                </div>
+            <div>
+                <table className="table table-striped table-striped">
+                    <thead className="thead-dark">
+                        <tr>
+                            <td>ID</td>
+                            <td>Localisation</td>
+                            <td>Persons in house</td>
+                            <td>House size</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.dataTable()}
+                    </tbody>
+                </table>
             </div>
         )
     }
