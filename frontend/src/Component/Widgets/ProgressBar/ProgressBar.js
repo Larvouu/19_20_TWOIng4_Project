@@ -7,11 +7,11 @@ class ProgressBar extends Component {
         return (
             <div>
                 <br/>
-                <div id="text" style={{ fontSize: "0.8em" }}>Salut</div>
+                <div id="text" style={{ fontSize: "0.8em" }}>{this.props.progressBar_title}</div>
                 <br/>
                 
-                <Progress color="info" value="25" />
-                <div id="value" style={{ fontSize: "1.4em" }}>25%</div>
+                <Progress color="info" value={(this.props.tmp_sup/this.props.tot_temp)*100} />
+                <div id="value" style={{ fontSize: "0.8em" }}>{(this.props.tmp_sup/this.props.tot_temp)*100}%</div>
             </div>
         );
     }

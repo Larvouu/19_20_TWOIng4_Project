@@ -5,4 +5,7 @@ var user = require('../controleur/userControleur');
 /* GET users listing. */
 router.get('/', user.findAll);
 
+/** GET users par houseSize */
+router.get('/houseSize/:houseSize', user.findAllByHouseSize);
+
 module.exports = router;

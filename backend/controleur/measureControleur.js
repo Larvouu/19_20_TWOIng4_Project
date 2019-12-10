@@ -76,6 +76,23 @@ exports.getTypeAirPollution = (req, res) => {
         });
 }
 
+//return la température max parmis toutes les measures
+exports.getTempSuperieurOuEgalesAVingt = (req, res) => {
+
+    Measure.find({
+        type: 'temperature',
+        value: { $gte: 30 }
+    })
+        .then(measures => {
+            res.send(measures);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || 'erreur au moment de trouver les measures'
+            });
+        });
+}
+
 //trouver un measure avec son id
 exports.findOne = (req, res) => {
     Measure.findById(req.params.measureId)

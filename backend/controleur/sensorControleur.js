@@ -35,6 +35,19 @@ exports.findAll = (req, res) => {
         });
 }
 
+// trouver + return tous les sensors via la location
+exports.findAllByLocation = (req, res) => {
+    Sensor.find({location : req.params.location})
+        .then(sensors => {
+            res.send(sensors);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || 'erreur au moment de trouver les sensors'
+            });
+        });
+}
+
 
 //trouver un sensor avec son id
 exports.findOne = (req, res) => {

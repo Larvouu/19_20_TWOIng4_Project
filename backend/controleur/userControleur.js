@@ -36,6 +36,19 @@ exports.findAll = (req,res) => {
         });
 }
 
+// retourne les users selon leur houseSize
+exports.findAllByHouseSize = (req,res) => {
+    User.find({houseSize : req.params.houseSize})
+        .then(users => {
+            res.send(users);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || 'erreur au moment de trouver les users'
+            });
+        });
+}
+
 // code de la diapo du cours
 //trouver un user avec son id
 exports.findOne = (req,res) => {

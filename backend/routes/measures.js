@@ -10,4 +10,7 @@ router.get('/humidity', measure.getTypeHumidity);
 router.get('/temperature', measure.getTypeTemperature);
 router.get('/airPollution', measure.getTypeAirPollution);
 
+/** GET les températures >= 20 */
+router.get('/tempsSupOuEgAVingt', measure.getTempSuperieurOuEgalesAVingt);
+
 module.exports = router;
