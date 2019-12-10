@@ -1,58 +1,117 @@
-import React from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React, { Component } from 'react';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import axios from 'axios'; //Pour l'ajout d'utilisateur
+import './AdminForm.css';
 
-const Example = (props) => {
-  return (
-    <Form>
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleEmail">Email</Label>
-            <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-          </FormGroup>
-        </Col>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="examplePassword">Password</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-          </FormGroup>
-        </Col>
-      </Row>
-      <FormGroup>
-        <Label for="exampleAddress">Address</Label>
-        <Input type="text" name="address" id="exampleAddress" placeholder="1234 Main St"/>
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleAddress2">Address 2</Label>
-        <Input type="text" name="address2" id="exampleAddress2" placeholder="Apartment, studio, or floor"/>
-      </FormGroup>
-      <Row form>
-        <Col md={6}>
-          <FormGroup>
-            <Label for="exampleCity">City</Label>
-            <Input type="text" name="city" id="exampleCity"/>
-          </FormGroup>
-        </Col>
-        <Col md={4}>
-          <FormGroup>
-            <Label for="exampleState">State</Label>
-            <Input type="text" name="state" id="exampleState"/>
-          </FormGroup>
-        </Col>
-        <Col md={2}>
-          <FormGroup>
-            <Label for="exampleZip">Zip</Label>
-            <Input type="text" name="zip" id="exampleZip"/>
-          </FormGroup>  
-        </Col>
-      </Row>
-      <FormGroup check>
-        <Input type="checkbox" name="check" id="exampleCheck"/>
-        <Label for="exampleCheck" check>Check me out</Label>
-      </FormGroup>
-      <Button>Sign in</Button>
-    </Form>
-  );
+class AdminForm extends Component {
+
+  constructor(props) {
+    super(props)
+    this.onChangeUserLocation = this.onChangeUserLocation.bind(this);
+    this.onChangeUserPersonsInHouse = this.onChangeUserPersonsInHouse.bind(this);
+    this.onChangeUserHouseSize = this.onChangeUserHouseSize.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+      location: '',
+      personsInHouse: '',
+      houseSize: ''
+    }
+  }
+
+  onChangeUserLocation(e) {
+    this.setState({ location: e.target.value })
+  }
+
+  onChangeUserPersonsInHouse(e) {
+    this.setState({ personsInHouse: e.target.value })
+  }
+
+  onChangeUserHouseSize(e) {
+    this.setState({ houseSize: e.target.value })
+  }
+
+  onSubmit(e) {
+    e.preventDefault()
+
+    const userObject = {
+        location: this.state.location,
+        personsInHouse: this.state.personsInHouse,
+        houseSize: this.state.houseSize
+    };
+
+    axios.put('http://localhost:3000/user', userObject)
+        .then((res) => {
+            console.log(res.data)
+        }).catch((error) => {
+            console.log(error)
+        });
+
+    this.setState({ location: '', personsInHouse: '', houseSize: '' })
+    /*alert('pays : ' + this.state.location 
+        + '\nnombre : '+ this.state.personsInHouse
+        + '\ntaille : '+ this.state.houseSize);
+        e.preventDefault();*/
 }
 
-export default Example;
+
+  render() {
+    return (
+      <Form>
+        <div id="title-form" style={{ marginTop: "3%", marginBottom: "3%" }}>Ajouter un utilisateur </div>
+        <FormGroup>
+          <Label for="location" className="text-form">Pays</Label>
+          <Input 
+            type="country" 
+            name="form_location" 
+            id="input_location" 
+            placeholder="france"
+            value={this.state.location}
+            onChange={this.onChangeUserLocation}
+            className="form-control"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="personsInHouse" className="text-form">Nombre de personnes dans la maison</Label>
+          <Input 
+            type="number" 
+            name="form_personsInHouse" 
+            id="input_personsInHouse" 
+            placeholder="3" 
+            value={this.state.personsInHouse}
+            onChange={this.onChangeUserPersonsInHouse}
+            className="form-control"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="houseSize" className="text-form">Taille de la maison</Label>
+          <Input 
+            type="select" 
+            name="form_houseSize" 
+            id="input_houseSize"
+            value={this.state.houseSize}
+            onChange={this.onChangeUserHouseSize}
+            className="form-control"
+          >
+            <option className="text-form">small</option>
+            <option className="text-form">medium</option>
+            <option className="text-form">big</option>
+          </Input>
+        </FormGroup>
+
+        <Button 
+          type="submit"  //Ne marche pas encore
+          onClick={this.onSubmit}
+          value="Create User"
+          outline color="info"
+          className="text-form"
+          style={{ marginTop: "5%", marginBottom: "5%" }}
+        >
+          Créer l'utilisateur
+        </Button>
+      </Form>
+    );
+  }
+}
+
+export default AdminForm;

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+let cors = require('cors');
 
 mongoose.Promise = global.Promise;
 const dbName = "DashboardProject";
@@ -47,5 +48,7 @@ app.use("/measures", measuresRouter);
 app.use("/user", userRouter);
 app.use("/sensor", sensorRouter);
 app.use("/measure", measureRouter);
+
+app.use(cors());
 
 module.exports = app;
